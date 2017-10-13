@@ -1,5 +1,5 @@
 Vue.component('my-page', {
-  template: '#page'
+  template: '#my-page'
 })
 
 new Vue({

@@ -8,11 +8,13 @@
     <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
 
     <title>Quasar App</title>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" rel="stylesheet" type="text/css">
     <link rel="icon" href="favicon.png" type="image/x-icon">
-    <link href="styles.css" rel="stylesheet" type="text/css">
 
-    <link href="TODO-CDN-quasar.mat.min.css" rel="stylesheet" type="text/css"></link>
+    <!-- TODO replace with actual CDN -->
+    <link href="https://rawcdn.githack.com/quasarframework/quasar-future/master/dist/quasar.mat.min.css" rel="stylesheet" type="text/css">
+
+    <link href="styles.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div id="q-app">
@@ -67,7 +69,7 @@
       </q-layout>
     </div>
 
-    <script type="text/x-template" id="page">
+    <script type="text/x-template" id="my-page">
       <div class="layout-padding logo-container non-selectable no-pointer-events">
         <div class="logo">
           <img src="quasar-logo-full.svg">
@@ -76,7 +78,9 @@
     </script>
 
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
-    <script src="TODO-CDN-quasar.mat.umd.min.js"></script>
+
+    <!-- TODO replace with actual CDN -->
+    <script src="https://rawcdn.githack.com/quasarframework/quasar-future/master/dist/quasar.mat.umd.min.js"></script>
 
     <script src="main.js"></script>
   </body>
