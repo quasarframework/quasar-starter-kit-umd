@@ -6,7 +6,8 @@ new Vue({
   el: '#q-app',
   data: function () {
     return {
-      version: Quasar.version
+      version: Quasar.version,
+      drawerState: true
     }
   },
   methods: {
