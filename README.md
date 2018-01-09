@@ -2,7 +2,7 @@
 
 ![Quasar Framework logo](https://cdn.rawgit.com/quasarframework/quasar-art/863c14bd/dist/svg/quasar-logo-full-inline.svg)
 
-# Quasar Framework UMD App Template
+# Quasar Framework UMD Starter Kit
 > This template is mainly for showing how you can use the Quasar UMD version.
 
 ## Usage
@@ -10,10 +10,10 @@ Use Quasar CLI to generate a new project using this template:
 
 ``` bash
 # install Quasar CLI if you don't have it already
-$ npm install -g quasar-cli
+$ npm install -g quasar-cli@next
 
 # generate a project folder with this template
-$ quasar init umd my-project
+$ quasar init -t umd my-project
 
 $ cd my-project
 
