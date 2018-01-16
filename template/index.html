@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{lang}}">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +7,13 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
 
-    <title>Quasar App</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" rel="stylesheet" type="text/css">
+    <title>Quasar App - {{ name }}</title>{{#if_eq icons "material"}}
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" rel="stylesheet" type="text/css">{{/if_eq}}{{#if_eq icons "fontawesome"}}
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">{{/if_eq}}{{#if_eq icons "ionicons"}}
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">{{/if_eq}}{{#if_eq icons "mdi"}}
+    <link href="https://unpkg.com/mdi@2.1.19/css/materialdesignicons.min.css" rel="stylesheet">{{/if_eq}}
     <link rel="icon" href="favicon.png" type="image/x-icon">
-    <link href="https://unpkg.com/quasar-framework@0.15.0-beta.1/dist/quasar.{{theme}}{{#rtl}}.rtl{{/rtl}}{{#minified}}.min{{/minified}}.css" rel="stylesheet" type="text/css">
+    <link href="https://unpkg.com/quasar-framework@{{ quasar_version }}/dist/umd/quasar.{{theme}}{{#rtl}}.rtl{{/rtl}}{{#minified}}.min{{/minified}}.css" rel="stylesheet" type="text/css">
     <link href="styles.css" rel="stylesheet" type="text/css">
   </head>
   <body>
@@ -18,10 +21,10 @@
       <q-layout view="lHh Lpr fff">
         <q-layout-header>
           <q-toolbar class="glossy">
-            <q-btn flat round dense @click="drawerState = !drawerState" icon="menu"></q-btn>
+            <q-btn flat round dense @click="drawerState = !drawerState" icon="{{#if_eq icons "material"}}menu{{/if_eq}}{{#if_eq icons "fontawesome"}}fas fa-bars{{/if_eq}}{{#if_eq icons "ionicons"}}ion-android-menu{{/if_eq}}{{#if_eq icons "mdi"}}mdi-menu{{/if_eq}}"></q-btn>
 
             <q-toolbar-title>
-              Quasar App
+              Quasar App - {{ name }}
               <div slot="subtitle">Running on Quasar v\{{ version }}</div>
             </q-toolbar-title>
           </q-toolbar>
@@ -31,19 +34,19 @@
           <q-list no-border link inset-delimiter>
             <q-list-header>Essential Links</q-list-header>
             <q-item @click.native="launch('http://quasar-framework.org')">
-              <q-item-side icon="school"></q-item-side>
+              <q-item-side icon="{{#if_eq icons "material"}}school{{/if_eq}}{{#if_eq icons "fontawesome"}}fas fa-graduation-cap{{/if_eq}}{{#if_eq icons "ionicons"}}ion-university{{/if_eq}}{{#if_eq icons "mdi"}}mdi-school{{/if_eq}}"></q-item-side>
               <q-item-main label="Docs" sublabel="quasar-framework.org"></q-item-main>
             </q-item>
             <q-item @click.native="launch('http://forum.quasar-framework.org')">
-              <q-item-side icon="record_voice_over"></q-item-side>
+              <q-item-side icon="{{#if_eq icons "material"}}forum{{/if_eq}}{{#if_eq icons "fontawesome"}}far fa-clipboard{{/if_eq}}{{#if_eq icons "ionicons"}}ion-compose{{/if_eq}}{{#if_eq icons "mdi"}}mdi-forum{{/if_eq}}"></q-item-side>
               <q-item-main label="Forum" sublabel="forum.quasar-framework.org"></q-item-main>
             </q-item>
             <q-item @click.native="launch('https://gitter.im/quasarframework/Lobby')">
-              <q-item-side icon="chat"></q-item-side>
+              <q-item-side icon="{{#if_eq icons "material"}}chat{{/if_eq}}{{#if_eq icons "fontawesome"}}fas fa-comments{{/if_eq}}{{#if_eq icons "ionicons"}}ion-chatbubbles{{/if_eq}}{{#if_eq icons "mdi"}}mdi-message-text{{/if_eq}}"></q-item-side>
               <q-item-main label="Gitter Channel" sublabel="Quasar Lobby"></q-item-main>
             </q-item>
             <q-item @click.native="launch('https://twitter.com/quasarframework')">
-              <q-item-side icon="rss feed"></q-item-side>
+              <q-item-side icon="{{#if_eq icons "material"}}rss feed{{/if_eq}}{{#if_eq icons "fontawesome"}}fab fa-twitter{{/if_eq}}{{#if_eq icons "ionicons"}}ion-social-twitter{{/if_eq}}{{#if_eq icons "mdi"}}mdi-twitter{{/if_eq}}"></q-item-side>
               <q-item-main label="Twitter" sublabel="@quasarframework"></q-item-main>
             </q-item>
           </q-list>
@@ -57,14 +60,19 @@
 
     <script type="text/x-template" id="my-page">
       <q-page padding>
+
+        <!-- page content; replace this entirely -->
         <div class="row flex-center absolute-full">
           <img src="quasar-logo-full.svg">
         </div>
+
       </q-page>
     </script>
 
     <script src="https://unpkg.com/vue/dist/vue{{#minified}}.min{{/minified}}.js"></script>
-    <script src="https://unpkg.com/quasar-framework@0.15.0-beta.1/dist/quasar.{{ theme }}.umd{{#minified}}.min{{/minified}}.js"></script>
+    <script src="https://unpkg.com/quasar-framework@{{ quasar_version }}/dist/umd/quasar.{{ theme }}.umd{{#minified}}.min{{/minified}}.js"></script>{{#unless_eq lang "en-us"}}
+    <script src="https://unpkg.com/quasar-framework@{{ quasar_version }}/dist/umd/i18n.{{lang}}.umd.min.js"></script>{{/unless_eq}}{{#unless_eq icons "material"}}
+    <script src="https://unpkg.com/quasar-framework@{{ quasar_version }}/dist/umd/icons.{{icons}}.umd.min.js"></script>{{/unless_eq}}
 
     <script src="main.js"></script>
   </body>

@@ -8,15 +8,14 @@ const
 
 module.exports = {
   helpers: {
-    if_or(v1, v2, options) {
-      if (v1 || v2) {
-        return options.fn(this)
-      }
-
-      return options.inverse(this)
-    },
-    template_version() {
+    template_version () {
       return templateVersion
+    },
+    camel_case (str) {
+      return str.replace(/-([a-z])/g, g => g[1].toUpperCase())
+    },
+    quasar_version () {
+      return '0.15.0-beta.6'
     }
   },
 
@@ -24,11 +23,11 @@ module.exports = {
     name: {
       type: 'string',
       required: true,
-      message: 'Project name',
+      message: 'Project name'
     },
     author: {
       type: 'string',
-      message: 'Author',
+      message: 'Author'
     },
     minified: {
       type: 'confirm',
@@ -41,12 +40,12 @@ module.exports = {
         {
           name: 'Material Design',
           value: 'mat',
-          short: 'mat'
+          short: 'Material Design'
         },
         {
           name: 'iOS',
           value: 'ios',
-          short: 'ios'
+          short: 'iOS'
         }
       ]
     },
@@ -54,8 +53,41 @@ module.exports = {
       type: 'confirm',
       message: 'Use Quasar RTL CSS? (experimental!)',
       default: false
+    },
+    icons: {
+      type: 'list',
+      message: 'Choose Icon Set',
+      choices: [
+        {
+          name: 'Material Icons (recommended)',
+          value: 'material',
+          short: 'Material Icons'
+        },
+        {
+          name: 'Fontawesome',
+          value: 'fontawesome',
+          short: 'Fontawesome'
+        },
+        {
+          name: 'Ionicons',
+          value: 'ionicons',
+          short: 'Ionicons'
+        },
+        {
+          name: 'MDI',
+          value: 'mdi',
+          short: 'MDI'
+        }
+      ]
+    },
+    lang: {
+      type: 'string',
+      message: 'Quasar I18n - one from https://github.com/quasarframework/quasar/tree/dev/i18n',
+      default: 'en-us',
+      validate: opt => opt && opt.length >= 2
     }
   },
+
   complete: function(data, { chalk }) {
     const cwd = path.join(process.cwd(), data.inPlace ? '' : data.destDirName)
 
