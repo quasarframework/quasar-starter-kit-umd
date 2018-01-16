@@ -69,6 +69,7 @@
       </q-page>
     </script>
 
+    {{#ie}}<script src="https://unpkg.com/quasar-framework@{{ quasar_version }}/dist/umd/quasar.ie.polyfills.umd.min.js"></script>{{/ie}}
     <script src="https://unpkg.com/vue/dist/vue{{#minified}}.min{{/minified}}.js"></script>
     <script src="https://unpkg.com/quasar-framework@{{ quasar_version }}/dist/umd/quasar.{{ theme }}.umd{{#minified}}.min{{/minified}}.js"></script>{{#unless_eq lang "en-us"}}
     <script src="https://unpkg.com/quasar-framework@{{ quasar_version }}/dist/umd/i18n.{{lang}}.umd.min.js"></script>{{/unless_eq}}{{#unless_eq icons "material"}}

@@ -85,6 +85,11 @@ module.exports = {
       message: 'Quasar I18n - one from https://github.com/quasarframework/quasar/tree/dev/i18n',
       default: 'en-us',
       validate: opt => opt && opt.length >= 2
+    },
+    ie: {
+      type: 'confirm',
+      default: false,
+      message: 'Support Internet Explorer 11 and Edge?'
     }
   },
 
