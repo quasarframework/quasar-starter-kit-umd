@@ -14,7 +14,20 @@
     <link href="https://unpkg.com/mdi@2.1.19/css/materialdesignicons.min.css" rel="stylesheet">{{/if_eq}}
     <link rel="icon" href="favicon.png" type="image/x-icon">
     <link href="https://unpkg.com/quasar-framework@{{ quasar_version }}/dist/umd/quasar.{{theme}}{{#rtl}}.rtl{{/rtl}}{{#minified}}.min{{/minified}}.css" rel="stylesheet" type="text/css">
-    <link href="styles.css" rel="stylesheet" type="text/css">
+    
+    <style type="text/css">
+      .logo-container {
+        width: 255px;
+        height: 242px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+      }
+      .logo {
+        position: absolute;
+      }
+    </style>
   </head>
   <body>
     <div id="q-app">
@@ -75,6 +88,29 @@
     <script src="https://unpkg.com/quasar-framework@{{ quasar_version }}/dist/umd/i18n.{{lang}}.umd.min.js"></script>{{/unless_eq}}{{#unless_eq icons "material"}}
     <script src="https://unpkg.com/quasar-framework@{{ quasar_version }}/dist/umd/icons.{{icons}}.umd.min.js"></script>{{/unless_eq}}
 
-    <script src="main.js"></script>
+    <script>
+      {{#unless_eq lang "en-us"}}Quasar.i18n.set(Quasar.i18n.{{camel_case lang}})
+      {{/unless_eq}}{{#unless_eq icons "material"}}Quasar.icons.set(Quasar.icons.{{icons}})
+      {{/unless_eq}}
+
+      Vue.component('my-page', {
+        template: '#my-page'
+      })
+
+      new Vue({
+        el: '#q-app',
+        data: function () {
+          return {
+            version: Quasar.version,
+            drawerState: true
+          }
+        },
+        methods: {
+          launch: function (url) {
+            Quasar.utils.openURL(url)
+          }
+        }
+      })
+    </script>
   </body>
 </html>

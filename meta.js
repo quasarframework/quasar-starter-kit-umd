@@ -15,7 +15,7 @@ module.exports = {
       return str.replace(/-([a-z])/g, g => g[1].toUpperCase())
     },
     quasar_version () {
-      return '0.15.0-beta.7'
+      return '0.15.0-beta.9'
     }
   },
 
