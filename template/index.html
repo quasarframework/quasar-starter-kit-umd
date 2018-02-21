@@ -14,7 +14,7 @@
     <link href="https://unpkg.com/mdi@2.1.19/css/materialdesignicons.min.css" rel="stylesheet">{{/if_eq}}
     <link rel="icon" href="favicon.png" type="image/x-icon">
     <link href="https://unpkg.com/quasar-framework@{{ quasar_version }}/dist/umd/quasar.{{theme}}{{#rtl}}.rtl{{/rtl}}{{#minified}}.min{{/minified}}.css" rel="stylesheet" type="text/css">
-    
+
     <style type="text/css">
       .logo-container {
         width: 255px;
@@ -50,13 +50,13 @@
               <q-item-side icon="{{#if_eq icons "material"}}school{{/if_eq}}{{#if_eq icons "fontawesome"}}fas fa-graduation-cap{{/if_eq}}{{#if_eq icons "ionicons"}}ion-university{{/if_eq}}{{#if_eq icons "mdi"}}mdi-school{{/if_eq}}"></q-item-side>
               <q-item-main label="Docs" sublabel="quasar-framework.org"></q-item-main>
             </q-item>
+            <q-item @click.native="launch('https://discord.gg/5TDhbDg')">
+              <q-item-side icon="{{#if_eq icons "material"}}chat{{/if_eq}}{{#if_eq icons "fontawesome"}}fas fa-comments{{/if_eq}}{{#if_eq icons "ionicons"}}ion-chatbubbles{{/if_eq}}{{#if_eq icons "mdi"}}mdi-message-text{{/if_eq}}"></q-item-side>
+              <q-item-main label="Discord Chat Channel" sublabel="https://discord.gg/5TDhbDg"></q-item-main>
+            </q-item>
             <q-item @click.native="launch('http://forum.quasar-framework.org')">
               <q-item-side icon="{{#if_eq icons "material"}}forum{{/if_eq}}{{#if_eq icons "fontawesome"}}far fa-clipboard{{/if_eq}}{{#if_eq icons "ionicons"}}ion-compose{{/if_eq}}{{#if_eq icons "mdi"}}mdi-forum{{/if_eq}}"></q-item-side>
               <q-item-main label="Forum" sublabel="forum.quasar-framework.org"></q-item-main>
-            </q-item>
-            <q-item @click.native="launch('https://gitter.im/quasarframework/Lobby')">
-              <q-item-side icon="{{#if_eq icons "material"}}chat{{/if_eq}}{{#if_eq icons "fontawesome"}}fas fa-comments{{/if_eq}}{{#if_eq icons "ionicons"}}ion-chatbubbles{{/if_eq}}{{#if_eq icons "mdi"}}mdi-message-text{{/if_eq}}"></q-item-side>
-              <q-item-main label="Gitter Channel" sublabel="Quasar Lobby"></q-item-main>
             </q-item>
             <q-item @click.native="launch('https://twitter.com/quasarframework')">
               <q-item-side icon="{{#if_eq icons "material"}}rss feed{{/if_eq}}{{#if_eq icons "fontawesome"}}fab fa-twitter{{/if_eq}}{{#if_eq icons "ionicons"}}ion-social-twitter{{/if_eq}}{{#if_eq icons "mdi"}}mdi-twitter{{/if_eq}}"></q-item-side>
