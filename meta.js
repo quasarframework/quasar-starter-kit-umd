@@ -51,7 +51,7 @@ module.exports = {
     },
     rtl: {
       type: 'confirm',
-      message: 'Use Quasar RTL CSS? (experimental!)',
+      message: 'Use RTL support?',
       default: false
     },
     icons: {
