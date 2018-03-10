@@ -11,9 +11,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" rel="stylesheet" type="text/css">{{/if_eq}}{{#if_eq icons "fontawesome"}}
     <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">{{/if_eq}}{{#if_eq icons "ionicons"}}
     <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">{{/if_eq}}{{#if_eq icons "mdi"}}
-    <link href="https://unpkg.com/mdi@2.1.19/css/materialdesignicons.min.css" rel="stylesheet">{{/if_eq}}
+    <link href="https://cdn.jsdelivr.net/npm/mdi@2.1.19/css/materialdesignicons.min.css" rel="stylesheet">{{/if_eq}}
     <link rel="icon" href="favicon.png" type="image/x-icon">
-    <link href="https://unpkg.com/quasar-framework@{{ quasar_version }}/dist/umd/quasar.{{theme}}{{#rtl}}.rtl{{/rtl}}{{#minified}}.min{{/minified}}.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/quasar-framework@{{ quasar_version }}/dist/umd/quasar.{{theme}}{{#rtl}}.rtl{{/rtl}}{{#minified}}.min{{/minified}}.css" rel="stylesheet" type="text/css">
 
     <style type="text/css">
       .logo-container {
@@ -88,11 +88,11 @@
       </q-page>
     </script>
 
-    {{#ie}}<script src="https://unpkg.com/quasar-framework@{{ quasar_version }}/dist/umd/quasar.ie.polyfills.umd.min.js"></script>{{/ie}}
+    {{#ie}}<script src="https://cdn.jsdelivr.net/npm/quasar-framework@{{ quasar_version }}/dist/umd/quasar.ie.polyfills.umd.min.js"></script>{{/ie}}
     <script src="https://cdn.jsdelivr.net/npm/vue@latest/dist/vue{{#minified}}.min{{/minified}}.js"></script>
-    <script src="https://unpkg.com/quasar-framework@{{ quasar_version }}/dist/umd/quasar.{{ theme }}.umd{{#minified}}.min{{/minified}}.js"></script>{{#unless_eq lang "en-us"}}
-    <script src="https://unpkg.com/quasar-framework@{{ quasar_version }}/dist/umd/i18n.{{lang}}.umd.min.js"></script>{{/unless_eq}}{{#unless_eq icons "material"}}
-    <script src="https://unpkg.com/quasar-framework@{{ quasar_version }}/dist/umd/icons.{{icons}}.umd.min.js"></script>{{/unless_eq}}
+    <script src="https://cdn.jsdelivr.net/npm/quasar-framework@{{ quasar_version }}/dist/umd/quasar.{{ theme }}.umd{{#minified}}.min{{/minified}}.js"></script>{{#unless_eq lang "en-us"}}
+    <script src="https://cdn.jsdelivr.net/npm/quasar-framework@{{ quasar_version }}/dist/umd/i18n.{{lang}}.umd.min.js"></script>{{/unless_eq}}{{#unless_eq icons "material"}}
+    <script src="https://cdn.jsdelivr.net/npm/quasar-framework@{{ quasar_version }}/dist/umd/icons.{{icons}}.umd.min.js"></script>{{/unless_eq}}
 
     <script>
       {{#unless_eq lang "en-us"}}Quasar.i18n.set(Quasar.i18n.{{camel_case lang}})
