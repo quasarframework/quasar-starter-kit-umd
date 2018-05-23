@@ -86,6 +86,11 @@ module.exports = {
       default: 'en-us',
       validate: opt => opt && opt.length >= 2
     },
+    animations: {
+      type: 'confirm',
+      default: false,
+      message: 'Use quasar-extras animations?'
+    },
     ie: {
       type: 'confirm',
       default: false,
