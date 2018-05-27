@@ -28,7 +28,6 @@ Remove the template from below and provide thoughtful commentary *and code sampl
 <!-- BUG REPORT TEMPLATE -->
 ### Software version
 
-<!-- You can use the `quasar info` command and copy paste it here -->
 Quasar:
 OS:
 Node:
