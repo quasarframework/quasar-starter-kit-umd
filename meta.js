@@ -15,7 +15,7 @@ module.exports = {
       return str.replace(/-([a-z])/g, g => g[1].toUpperCase())
     },
     quasar_version () {
-      return '^0.17.0'
+      return '^1.0.0-alpha.0'
     }
   },
 
@@ -33,22 +33,6 @@ module.exports = {
       type: 'confirm',
       message: 'Use minified dependencies? (recommended)'
     },
-    theme: {
-      type: 'list',
-      message: 'Quasar Theme',
-      choices: [
-        {
-          name: 'Material Design',
-          value: 'mat',
-          short: 'Material Design'
-        },
-        {
-          name: 'iOS',
-          value: 'ios',
-          short: 'iOS'
-        }
-      ]
-    },
     rtl: {
       type: 'confirm',
       message: 'Use RTL support?',
@@ -60,7 +44,7 @@ module.exports = {
       choices: [
         {
           name: 'Material Icons (recommended)',
-          value: 'material',
+          value: 'material-icons',
           short: 'Material Icons'
         },
         {
@@ -77,12 +61,17 @@ module.exports = {
           name: 'MDI',
           value: 'mdi',
           short: 'MDI'
+        },
+        {
+          name: 'Eva Icons',
+          value: 'eva-icons',
+          short: 'Eva'
         }
       ]
     },
     lang: {
       type: 'string',
-      message: 'Quasar I18n - one from https://github.com/quasarframework/quasar/tree/dev/i18n',
+      message: 'Quasar I18n - one from https://github.com/quasarframework/quasar/tree/dev/quasar/i18n',
       default: 'en-us',
       validate: opt => opt && opt.length >= 2
     },
@@ -102,7 +91,7 @@ module.exports = {
     const cwd = path.join(process.cwd(), data.inPlace ? '' : data.destDirName)
 
     const message = `
-# ${chalk.green('Quasar UMD Project initialization finished!')}
+# ${chalk.green('Quasar UMD demo initialization finished!')}
 # ===========================================
 
 Documentation can be found at: http://quasar-framework.org

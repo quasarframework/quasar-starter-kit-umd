@@ -7,14 +7,15 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
 
-    <title>Quasar App - {{ name }}</title>{{#if_eq icons "material"}}
+    <title>Quasar App - {{ name }}</title>{{#if_eq icons "material-icons"}}
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">{{/if_eq}}{{#if_eq icons "fontawesome"}}
     <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">{{/if_eq}}{{#if_eq icons "ionicons"}}
     <link href="https://cdn.jsdelivr.net/npm/ionicons@^4.0.0/dist/css/ionicons.min.css" rel="stylesheet">{{/if_eq}}{{#if_eq icons "mdi"}}
-    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@^2.0.0/css/materialdesignicons.min.css" rel="stylesheet">{{/if_eq}}{{#animations}}
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@^2.0.0/css/materialdesignicons.min.css" rel="stylesheet">{{/if_eq}}{{#if_eq icons "eva-icons"}}
+    <link href="https://cdn.jsdelivr.net/npm/eva-icons@^1.0.0/style/eva-icons.css" rel="stylesheet">{{/if_eq}}{{#animations}}
     <link href="https://cdn.jsdelivr.net/npm/animate.css@^3.5.2/animate.min.css" rel="stylesheet">{{/animations}}
     <link rel="icon" href="favicon.png" type="image/x-icon">
-    <link href="https://cdn.jsdelivr.net/npm/quasar-framework@{{ quasar_version }}/dist/umd/quasar.{{theme}}{{#rtl}}.rtl{{/rtl}}{{#minified}}.min{{/minified}}.css" rel="stylesheet" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/quasar@{{ quasar_version }}/dist/quasar{{#rtl}}.rtl{{/rtl}}{{#minified}}.min{{/minified}}.css" rel="stylesheet" type="text/css">
 
     <style type="text/css">
       .logo-container {
@@ -33,44 +34,82 @@
   <body>
     <div id="q-app">
       <q-layout view="lHh Lpr fff">
-        <q-layout-header>
+        <q-header elevated class="glossy">
           <q-toolbar
             :glossy="$q.theme === 'mat'"
             :inverted="$q.theme === 'ios'"
           >
-            <q-btn flat round dense @click="drawerState = !drawerState" icon="{{#if_eq icons "material"}}menu{{/if_eq}}{{#if_eq icons "fontawesome"}}fas fa-bars{{/if_eq}}{{#if_eq icons "ionicons"}}ion-android-menu{{/if_eq}}{{#if_eq icons "mdi"}}mdi-menu{{/if_eq}}"></q-btn>
+            <q-btn
+              flat
+              dense
+              round
+              @click="drawerState = !drawerState"
+              aria-label="Menu"
+              icon="{{#if_eq icons "material-icons"}}menu{{/if_eq}}{{#if_eq icons "fontawesome"}}fas fa-bars{{/if_eq}}{{#if_eq icons "ionicons"}}ion-menu{{/if_eq}}{{#if_eq icons "mdi"}}mdi-menu{{/if_eq}}{{#if_eq icons "eva-icons"}}eva-menu-outline{{/if_eq}}"
+            ></q-btn>
 
             <q-toolbar-title>
-              Quasar App - {{ name }}
-              <div slot="subtitle">Running on Quasar v\{{ version }}</div>
+              Quasar App
             </q-toolbar-title>
-          </q-toolbar>
-        </q-layout-header>
 
-        <q-layout-drawer
+            <div>Quasar v\{{ $q.version }}</div>
+          </q-toolbar>
+        </q-header>
+
+        <q-drawer
           v-model="drawerState"
-          :content-class="$q.theme === 'mat' ? 'bg-grey-3' : null"
+          bordered
+          content-class="bg-grey-2"
         >
-          <q-list no-border link inset-delimiter>
-            <q-list-header>Essential Links</q-list-header>
-            <q-item @click.native="launch('http://quasar-framework.org')">
-              <q-item-side icon="{{#if_eq icons "material"}}school{{/if_eq}}{{#if_eq icons "fontawesome"}}fas fa-graduation-cap{{/if_eq}}{{#if_eq icons "ionicons"}}ion-university{{/if_eq}}{{#if_eq icons "mdi"}}mdi-school{{/if_eq}}"></q-item-side>
-              <q-item-main label="Docs" sublabel="quasar-framework.org"></q-item-main>
+          <q-list>
+            <q-item-label header>Essential Links</q-item-label>
+            <q-item clickable tag="a" target="_blank" href="http://quasar-framework.org">
+              <q-item-section avatar>
+                <q-icon name="{{#if_eq icons "material-icons"}}school{{/if_eq}}{{#if_eq icons "fontawesome"}}fas fa-graduation-cap{{/if_eq}}{{#if_eq icons "ionicons"}}ion-school{{/if_eq}}{{#if_eq icons "mdi"}}mdi-school{{/if_eq}}{{#if_eq icons "eva-icons"}}eva-book-outline{{/if_eq}}"></q-icon>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>Docs</q-item-label>
+                <q-item-label caption>quasar-framework.org</q-item-label>
+              </q-item-section>
             </q-item>
-            <q-item @click.native="launch('https://discord.gg/5TDhbDg')">
-              <q-item-side icon="{{#if_eq icons "material"}}chat{{/if_eq}}{{#if_eq icons "fontawesome"}}fas fa-comments{{/if_eq}}{{#if_eq icons "ionicons"}}ion-chatbubbles{{/if_eq}}{{#if_eq icons "mdi"}}mdi-message-text{{/if_eq}}"></q-item-side>
-              <q-item-main label="Discord Chat Channel" sublabel="https://discord.gg/5TDhbDg"></q-item-main>
+            <q-item clickable tag="a" target="_blank" href="https://github.com/quasarframework/">
+              <q-item-section avatar>
+                <q-icon name="{{#if_eq icons "material-icons"}}code{{/if_eq}}{{#if_eq icons "fontawesome"}}fas fa-code{{/if_eq}}{{#if_eq icons "ionicons"}}ion-code{{/if_eq}}{{#if_eq icons "mdi"}}mdi-code-tags{{/if_eq}}{{#if_eq icons "eva-icons"}}eva-code-outline{{/if_eq}}"></q-icon>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>Github</q-item-label>
+                <q-item-label caption>github.com/quasarframework</q-item-label>
+              </q-item-section>
             </q-item>
-            <q-item @click.native="launch('http://forum.quasar-framework.org')">
-              <q-item-side icon="{{#if_eq icons "material"}}forum{{/if_eq}}{{#if_eq icons "fontawesome"}}far fa-clipboard{{/if_eq}}{{#if_eq icons "ionicons"}}ion-compose{{/if_eq}}{{#if_eq icons "mdi"}}mdi-forum{{/if_eq}}"></q-item-side>
-              <q-item-main label="Forum" sublabel="forum.quasar-framework.org"></q-item-main>
+            <q-item clickable tag="a" target="_blank" href="http://chat.quasar-framework.org">
+              <q-item-section avatar>
+                <q-icon name="{{#if_eq icons "material-icons"}}chat{{/if_eq}}{{#if_eq icons "fontawesome"}}fas fa-comments{{/if_eq}}{{#if_eq icons "ionicons"}}ion-chatbubbles{{/if_eq}}{{#if_eq icons "mdi"}}mdi-message-text{{/if_eq}}{{#if_eq icons "eva-icons"}}eva-message-square-outline{{/if_eq}}"></q-icon>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>Discord Chat Channel</q-item-label>
+                <q-item-label caption>chat.quasar-framework.org</q-item-label>
+              </q-item-section>
             </q-item>
-            <q-item @click.native="launch('https://twitter.com/quasarframework')">
-              <q-item-side icon="{{#if_eq icons "material"}}rss feed{{/if_eq}}{{#if_eq icons "fontawesome"}}fab fa-twitter{{/if_eq}}{{#if_eq icons "ionicons"}}ion-social-twitter{{/if_eq}}{{#if_eq icons "mdi"}}mdi-twitter{{/if_eq}}"></q-item-side>
-              <q-item-main label="Twitter" sublabel="@quasarframework"></q-item-main>
+            <q-item clickable tag="a" target="_blank" href="https://forum.quasar-framework.org">
+              <q-item-section avatar>
+                <q-icon name="{{#if_eq icons "material-icons"}}forum{{/if_eq}}{{#if_eq icons "fontawesome"}}far fa-clipboard{{/if_eq}}{{#if_eq icons "ionicons"}}ion-create{{/if_eq}}{{#if_eq icons "mdi"}}mdi-forum{{/if_eq}}{{#if_eq icons "eva-icons"}}eva-edit-2-outline{{/if_eq}}"></q-icon>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>Forum</q-item-label>
+                <q-item-label caption>forum.quasar-framework.org</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item clickable tag="a" target="_blank" href="https://twitter.com/quasarframework">
+              <q-item-section avatar>
+                <q-icon name="{{#if_eq icons "material-icons"}}rss_feed{{/if_eq}}{{#if_eq icons "fontawesome"}}fab fa-twitter{{/if_eq}}{{#if_eq icons "ionicons"}}ion-logo-twitter{{/if_eq}}{{#if_eq icons "mdi"}}mdi-twitter{{/if_eq}}{{#if_eq icons "eva-icons"}}eva-twitter-outline{{/if_eq}}"></q-icon>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>Twitter</q-item-label>
+                <q-item-label caption>@quasarframework</q-item-label>
+              </q-item-section>
             </q-item>
           </q-list>
-        </q-layout-drawer>
+        </q-drawer>
 
         <q-page-container>
           <my-page></my-page>
@@ -89,15 +128,15 @@
       </q-page>
     </script>
 
-    {{#ie}}<script src="https://cdn.jsdelivr.net/npm/quasar-framework@{{ quasar_version }}/dist/umd/quasar.ie.polyfills.umd.min.js"></script>{{/ie}}
+    {{#ie}}<script src="https://cdn.jsdelivr.net/npm/quasar@{{ quasar_version }}/dist/quasar.ie.polyfills.umd.min.js"></script>{{/ie}}
     <script src="https://cdn.jsdelivr.net/npm/vue@latest/dist/vue{{#minified}}.min{{/minified}}.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/quasar-framework@{{ quasar_version }}/dist/umd/quasar.{{ theme }}.umd{{#minified}}.min{{/minified}}.js"></script>{{#unless_eq lang "en-us"}}
-    <script src="https://cdn.jsdelivr.net/npm/quasar-framework@{{ quasar_version }}/dist/umd/i18n.{{lang}}.umd.min.js"></script>{{/unless_eq}}{{#unless_eq icons "material"}}
-    <script src="https://cdn.jsdelivr.net/npm/quasar-framework@{{ quasar_version }}/dist/umd/icons.{{icons}}.umd.min.js"></script>{{/unless_eq}}
+    <script src="https://cdn.jsdelivr.net/npm/quasar@{{ quasar_version }}/dist/quasar.umd{{#minified}}.min{{/minified}}.js"></script>{{#unless_eq lang "en-us"}}
+    <script src="https://cdn.jsdelivr.net/npm/quasar@{{ quasar_version }}/dist/i18n/{{lang}}.umd.min.js"></script>{{/unless_eq}}{{#unless_eq icons "material-icons"}}
+    <script src="https://cdn.jsdelivr.net/npm/quasar@{{ quasar_version }}/dist/icons/{{icons}}.umd.min.js"></script>{{/unless_eq}}
 
     <script>
       {{#unless_eq lang "en-us"}}Quasar.i18n.set(Quasar.i18n.{{camel_case lang}})
-      {{/unless_eq}}{{#unless_eq icons "material"}}Quasar.icons.set(Quasar.icons.{{icons}})
+      {{/unless_eq}}{{#unless_eq icons "material-icons"}}Quasar.icons.set(Quasar.icons.{{camel_case icons}})
       {{/unless_eq}}
 
       Vue.component('my-page', {
@@ -110,11 +149,6 @@
           return {
             version: Quasar.version,
             drawerState: true
-          }
-        },
-        methods: {
-          launch: function (url) {
-            Quasar.utils.openURL(url)
           }
         }
       })
