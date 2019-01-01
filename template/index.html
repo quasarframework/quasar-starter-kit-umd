@@ -35,10 +35,7 @@
     <div id="q-app">
       <q-layout view="lHh Lpr fff">
         <q-header elevated class="glossy">
-          <q-toolbar
-            :glossy="$q.theme === 'mat'"
-            :inverted="$q.theme === 'ios'"
-          >
+          <q-toolbar class="bg-primary">
             <q-btn
               flat
               dense
@@ -131,11 +128,11 @@
     {{#ie}}<script src="https://cdn.jsdelivr.net/npm/quasar@{{ quasar_version }}/dist/quasar.ie.polyfills.umd.min.js"></script>{{/ie}}
     <script src="https://cdn.jsdelivr.net/npm/vue@latest/dist/vue{{#minified}}.min{{/minified}}.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quasar@{{ quasar_version }}/dist/quasar.umd{{#minified}}.min{{/minified}}.js"></script>{{#unless_eq lang "en-us"}}
-    <script src="https://cdn.jsdelivr.net/npm/quasar@{{ quasar_version }}/dist/i18n/{{lang}}.umd.min.js"></script>{{/unless_eq}}{{#unless_eq icons "material-icons"}}
+    <script src="https://cdn.jsdelivr.net/npm/quasar@{{ quasar_version }}/dist/lang/{{lang}}.umd.min.js"></script>{{/unless_eq}}{{#unless_eq icons "material-icons"}}
     <script src="https://cdn.jsdelivr.net/npm/quasar@{{ quasar_version }}/dist/icons/{{icons}}.umd.min.js"></script>{{/unless_eq}}
 
     <script>
-      {{#unless_eq lang "en-us"}}Quasar.i18n.set(Quasar.i18n.{{camel_case lang}})
+      {{#unless_eq lang "en-us"}}Quasar.lang.set(Quasar.lang.{{camel_case lang}})
       {{/unless_eq}}{{#unless_eq icons "material-icons"}}Quasar.icons.set(Quasar.icons.{{camel_case icons}})
       {{/unless_eq}}
 
