@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">{{/if_eq}}{{#if_eq icons "fontawesome"}}
     <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">{{/if_eq}}{{#if_eq icons "ionicons"}}
     <link href="https://cdn.jsdelivr.net/npm/ionicons@^4.0.0/dist/css/ionicons.min.css" rel="stylesheet">{{/if_eq}}{{#if_eq icons "mdi"}}
-    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@^2.0.0/css/materialdesignicons.min.css" rel="stylesheet">{{/if_eq}}{{#if_eq icons "eva-icons"}}
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@^3.0.0/css/materialdesignicons.min.css" rel="stylesheet">{{/if_eq}}{{#if_eq icons "eva-icons"}}
     <link href="https://cdn.jsdelivr.net/npm/eva-icons@^1.0.0/style/eva-icons.css" rel="stylesheet">{{/if_eq}}{{#animations}}
     <link href="https://cdn.jsdelivr.net/npm/animate.css@^3.5.2/animate.min.css" rel="stylesheet">{{/animations}}
     <link rel="icon" href="favicon.png" type="image/x-icon">
@@ -129,11 +129,11 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@latest/dist/vue{{#minified}}.min{{/minified}}.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quasar@{{ quasar_version }}/dist/quasar.umd{{#minified}}.min{{/minified}}.js"></script>{{#unless_eq lang "en-us"}}
     <script src="https://cdn.jsdelivr.net/npm/quasar@{{ quasar_version }}/dist/lang/{{lang}}.umd.min.js"></script>{{/unless_eq}}{{#unless_eq icons "material-icons"}}
-    <script src="https://cdn.jsdelivr.net/npm/quasar@{{ quasar_version }}/dist/icons/{{icons}}.umd.min.js"></script>{{/unless_eq}}
+    <script src="https://cdn.jsdelivr.net/npm/quasar@{{ quasar_version }}/dist/icon-set/{{#if_eq icons "fontawesome"}}fontawesome-v5{{/if_eq}}{{#if_eq icons "ionicons"}}ionicons-v4{{/if_eq}}{{#if_eq icons "mdi"}}mdi-v3{{/if_eq}}{{#if_eq icons "eva-icons"}}eva-icons{{/if_eq}}.umd.min.js"></script>{{/unless_eq}}
 
     <script>
       {{#unless_eq lang "en-us"}}Quasar.lang.set(Quasar.lang.{{camel_case lang}})
-      {{/unless_eq}}{{#unless_eq icons "material-icons"}}Quasar.icons.set(Quasar.icons.{{camel_case icons}})
+      {{/unless_eq}}{{#unless_eq icons "material-icons"}}Quasar.iconSet.set(Quasar.iconSet.{{#if_eq icons "fontawesome"}}fontawesomeV5{{/if_eq}}{{#if_eq icons "ionicons"}}ioniconsV4{{/if_eq}}{{#if_eq icons "mdi"}}mdiV3{{/if_eq}}{{#if_eq icons "eva-icons"}}evaIcons{{/if_eq}})
       {{/unless_eq}}
 
       Vue.component('my-page', {

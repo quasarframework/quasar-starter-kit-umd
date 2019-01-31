@@ -2,8 +2,5 @@
   "name": "quasar-starter-kit-umd",
   "version": "1.0.0",
   "license": "MIT",
-  "description": "A Quasar setup to use for UMD version.",
-  "devDependencies": {
-    "vue-cli": "^2.8.1"
-  }
+  "description": "A Quasar setup to use for UMD version."
 }

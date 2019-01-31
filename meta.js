@@ -40,7 +40,7 @@ module.exports = {
     },
     icons: {
       type: 'list',
-      message: 'Choose Icon Set',
+      message: 'Choose Icon Library',
       choices: [
         {
           name: 'Material Icons (recommended)',
@@ -71,7 +71,7 @@ module.exports = {
     },
     lang: {
       type: 'string',
-      message: 'Quasar I18n - one from https://github.com/quasarframework/quasar/tree/dev/quasar/i18n',
+      message: 'Quasar Language Pack - one from https://github.com/quasarframework/quasar/tree/dev/quasar/i18n',
       default: 'en-us',
       validate: opt => opt && opt.length >= 2
     },
