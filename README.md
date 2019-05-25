@@ -8,10 +8,10 @@ Use Quasar CLI to generate a new project using this template:
 
 ``` bash
 # install Quasar CLI if you don't have it already
-$ npm install -g quasar-cli
+$ npm install -g @quasar/cli
 
 # generate a project folder with this template
-$ quasar init -t umd my-project
+$ quasar create <folder_name> -b umd
 
 $ cd my-project
 
@@ -30,17 +30,11 @@ Quasar Framework is an MIT-licensed open source project. Its ongoing development
 
 ## Documentation
 
-Head on to the Quasar Framework official website: [http://quasar-framework.org](http://quasar-framework.org)
+Head on to the Quasar Framework official website: [https://quasar.dev](https://quasar.dev)
 
 ## Community Forum
 
-Head on to the official community forum: [http://forum.quasar-framework.org](http://forum.quasar-framework.org)
-
-## Quasar Repositories
-
-* [Quasar Framework](https://github.com/quasarframework/quasar)
-* [Quasar CLI](https://github.com/quasarframework/quasar-cli)
-* [Quasar Play App](https://github.com/quasarframework/quasar-play)
+Head on to the official community forum: [https://forum.quasar.dev](https://forum.quasar.dev)
 
 ## Contributing
 
@@ -50,7 +44,7 @@ I'm excited if you want to contribute to Quasar under any form (report bugs, wri
 
 **Please use the appropriate Github repo to report issues. See "Related Components" above.** For example, a bug related to CLI should be reported to the CLI repo, one related to build issues to Quasar Framework Templates repo and so on.
 
-- The issue list of the repository is **exclusively** for bug reports and feature requests. For anything else please use the [Community Forum](http://forum.quasar-framework.org).
+- The issue list of the repository is **exclusively** for bug reports and feature requests. For anything else please use the [Community Forum](https://forum.quasar.dev).
 
 - Try to search for your issue, it may have already been fixed in the development branch or it may have a resolution.
 
@@ -60,7 +54,6 @@ I'm excited if you want to contribute to Quasar under any form (report bugs, wri
 
 - If your issue is resolved but still open, don’t hesitate to close it. In case you found a solution by yourself, it could be helpful to explain how you fixed it.
 
-Read more [here](http://quasar-framework.org/guide/contributing.html).
 
 ## License
 

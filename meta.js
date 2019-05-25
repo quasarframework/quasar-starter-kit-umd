@@ -94,7 +94,7 @@ module.exports = {
 # ${chalk.green('Quasar UMD demo initialization finished!')}
 # ===========================================
 
-Documentation can be found at: http://quasar-framework.org
+Documentation can be found at: http://quasar.dev
 
 Quasar is relying on donations to evolve. We'd be very grateful if you can
 take a look at: https://www.patreon.com/quasarframework
