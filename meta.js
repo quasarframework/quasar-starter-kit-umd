@@ -48,6 +48,21 @@ module.exports = {
           short: 'Material Icons'
         },
         {
+          name: 'Material Icons Outlined',
+          value: 'material-icons-outlined',
+          short: 'Material Icons Outlined'
+        },
+        {
+          name: 'Material Icons Round',
+          value: 'material-icons-round',
+          short: 'Material Icons Round'
+        },
+        {
+          name: 'Material Icons Sharp',
+          value: 'material-icons-sharp',
+          short: 'Material Icons Sharp'
+        },
+        {
           name: 'Fontawesome',
           value: 'fontawesome',
           short: 'Fontawesome'
