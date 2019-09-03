@@ -15,7 +15,7 @@ module.exports = {
       return str.replace(/-([a-z])/g, g => g[1].toUpperCase())
     },
     quasar_version () {
-      return '^1.0.0-beta.0'
+      return '^1.1.0'
     }
   },
 
@@ -46,6 +46,21 @@ module.exports = {
           name: 'Material Icons (recommended)',
           value: 'material-icons',
           short: 'Material Icons'
+        },
+        {
+          name: 'Material Icons Outlined',
+          value: 'material-icons-outlined',
+          short: 'Material Icons Outlined'
+        },
+        {
+          name: 'Material Icons Round',
+          value: 'material-icons-round',
+          short: 'Material Icons Round'
+        },
+        {
+          name: 'Material Icons Sharp',
+          value: 'material-icons-sharp',
+          short: 'Material Icons Sharp'
         },
         {
           name: 'Fontawesome',

@@ -8,7 +8,10 @@
     <meta name="viewport" content="user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1,width=device-width">
 
     <title>Quasar App - {{ name }}</title>{{#if_eq icons "material-icons"}}
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">{{/if_eq}}{{#if_eq icons "fontawesome"}}
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css">{{/if_eq}}{{#if_eq icons "material-icons-outlined"}}
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons+Outlined" rel="stylesheet" type="text/css">{{/if_eq}}{{#if_eq icons "material-icons-round"}}
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons+Round" rel="stylesheet" type="text/css">{{/if_eq}}{{#if_eq icons "material-icons-sharp"}}
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons+Sharp" rel="stylesheet" type="text/css">{{/if_eq}}{{#if_eq icons "fontawesome"}}
     <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet">{{/if_eq}}{{#if_eq icons "ionicons"}}
     <link href="https://cdn.jsdelivr.net/npm/ionicons@^4.0.0/dist/css/ionicons.min.css" rel="stylesheet">{{/if_eq}}{{#if_eq icons "mdi"}}
     <link href="https://cdn.jsdelivr.net/npm/@mdi/font@^3.0.0/css/materialdesignicons.min.css" rel="stylesheet">{{/if_eq}}{{#if_eq icons "eva-icons"}}
@@ -42,7 +45,7 @@
               round
               @click="drawerState = !drawerState"
               aria-label="Menu"
-              icon="{{#if_eq icons "material-icons"}}menu{{/if_eq}}{{#if_eq icons "fontawesome"}}fas fa-bars{{/if_eq}}{{#if_eq icons "ionicons"}}ion-menu{{/if_eq}}{{#if_eq icons "mdi"}}mdi-menu{{/if_eq}}{{#if_eq icons "eva-icons"}}eva-menu-outline{{/if_eq}}"
+              icon="{{#if_eq icons "material-icons"}}menu{{/if_eq}}{{#if_eq icons "material-icons-outlined"}}o_menu{{/if_eq}}{{#if_eq icons "material-icons-round"}}r_menu{{/if_eq}}{{#if_eq icons "material-icons-sharp"}}s_menu{{/if_eq}}{{#if_eq icons "fontawesome"}}fas fa-bars{{/if_eq}}{{#if_eq icons "ionicons"}}ion-menu{{/if_eq}}{{#if_eq icons "mdi"}}mdi-menu{{/if_eq}}{{#if_eq icons "eva-icons"}}eva-menu-outline{{/if_eq}}"
             ></q-btn>
 
             <q-toolbar-title>
@@ -62,7 +65,7 @@
             <q-item-label header>Essential Links</q-item-label>
             <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
               <q-item-section avatar>
-                <q-icon name="{{#if_eq icons "material-icons"}}school{{/if_eq}}{{#if_eq icons "fontawesome"}}fas fa-graduation-cap{{/if_eq}}{{#if_eq icons "ionicons"}}ion-school{{/if_eq}}{{#if_eq icons "mdi"}}mdi-school{{/if_eq}}{{#if_eq icons "eva-icons"}}eva-book-outline{{/if_eq}}"></q-icon>
+                <q-icon name="{{#if_eq icons "material-icons"}}school{{/if_eq}}{{#if_eq icons "material-icons-outlined"}}o_school{{/if_eq}}{{#if_eq icons "material-icons-round"}}r_school{{/if_eq}}{{#if_eq icons "material-icons-sharp"}}s_school{{/if_eq}}{{#if_eq icons "fontawesome"}}fas fa-graduation-cap{{/if_eq}}{{#if_eq icons "ionicons"}}ion-school{{/if_eq}}{{#if_eq icons "mdi"}}mdi-school{{/if_eq}}{{#if_eq icons "eva-icons"}}eva-book-outline{{/if_eq}}"></q-icon>
               </q-item-section>
               <q-item-section>
                 <q-item-label>Docs</q-item-label>
@@ -71,7 +74,7 @@
             </q-item>
             <q-item clickable tag="a" target="_blank" href="https://github.com/quasarframework/">
               <q-item-section avatar>
-                <q-icon name="{{#if_eq icons "material-icons"}}code{{/if_eq}}{{#if_eq icons "fontawesome"}}fas fa-code{{/if_eq}}{{#if_eq icons "ionicons"}}ion-code{{/if_eq}}{{#if_eq icons "mdi"}}mdi-code-tags{{/if_eq}}{{#if_eq icons "eva-icons"}}eva-code-outline{{/if_eq}}"></q-icon>
+                <q-icon name="{{#if_eq icons "material-icons"}}code{{/if_eq}}{{#if_eq icons "material-icons-outlined"}}o_code{{/if_eq}}{{#if_eq icons "material-icons-round"}}r_code{{/if_eq}}{{#if_eq icons "material-icons-sharp"}}s_code{{/if_eq}}{{#if_eq icons "fontawesome"}}fas fa-code{{/if_eq}}{{#if_eq icons "ionicons"}}ion-code{{/if_eq}}{{#if_eq icons "mdi"}}mdi-code-tags{{/if_eq}}{{#if_eq icons "eva-icons"}}eva-code-outline{{/if_eq}}"></q-icon>
               </q-item-section>
               <q-item-section>
                 <q-item-label>Github</q-item-label>
@@ -80,7 +83,7 @@
             </q-item>
             <q-item clickable tag="a" target="_blank" href="https://chat.quasar.dev">
               <q-item-section avatar>
-                <q-icon name="{{#if_eq icons "material-icons"}}chat{{/if_eq}}{{#if_eq icons "fontawesome"}}fas fa-comments{{/if_eq}}{{#if_eq icons "ionicons"}}ion-chatbubbles{{/if_eq}}{{#if_eq icons "mdi"}}mdi-message-text{{/if_eq}}{{#if_eq icons "eva-icons"}}eva-message-square-outline{{/if_eq}}"></q-icon>
+                <q-icon name="{{#if_eq icons "material-icons"}}chat{{/if_eq}}{{#if_eq icons "material-icons-outlined"}}o_chat{{/if_eq}}{{#if_eq icons "material-icons-round"}}r_chat{{/if_eq}}{{#if_eq icons "material-icons-sharp"}}s_chat{{/if_eq}}{{#if_eq icons "fontawesome"}}fas fa-comments{{/if_eq}}{{#if_eq icons "ionicons"}}ion-chatbubbles{{/if_eq}}{{#if_eq icons "mdi"}}mdi-message-text{{/if_eq}}{{#if_eq icons "eva-icons"}}eva-message-square-outline{{/if_eq}}"></q-icon>
               </q-item-section>
               <q-item-section>
                 <q-item-label>Discord Chat Channel</q-item-label>
@@ -89,7 +92,7 @@
             </q-item>
             <q-item clickable tag="a" target="_blank" href="https://forum.quasar.dev">
               <q-item-section avatar>
-                <q-icon name="{{#if_eq icons "material-icons"}}forum{{/if_eq}}{{#if_eq icons "fontawesome"}}far fa-clipboard{{/if_eq}}{{#if_eq icons "ionicons"}}ion-create{{/if_eq}}{{#if_eq icons "mdi"}}mdi-forum{{/if_eq}}{{#if_eq icons "eva-icons"}}eva-edit-2-outline{{/if_eq}}"></q-icon>
+                <q-icon name="{{#if_eq icons "material-icons"}}forum{{/if_eq}}{{#if_eq icons "material-icons-outlined"}}o_forum{{/if_eq}}{{#if_eq icons "material-icons-round"}}r_forum{{/if_eq}}{{#if_eq icons "material-icons-sharp"}}s_forum{{/if_eq}}{{#if_eq icons "fontawesome"}}far fa-clipboard{{/if_eq}}{{#if_eq icons "ionicons"}}ion-create{{/if_eq}}{{#if_eq icons "mdi"}}mdi-forum{{/if_eq}}{{#if_eq icons "eva-icons"}}eva-edit-2-outline{{/if_eq}}"></q-icon>
               </q-item-section>
               <q-item-section>
                 <q-item-label>Forum</q-item-label>
@@ -98,7 +101,7 @@
             </q-item>
             <q-item clickable tag="a" target="_blank" href="https://twitter.com/quasarframework">
               <q-item-section avatar>
-                <q-icon name="{{#if_eq icons "material-icons"}}rss_feed{{/if_eq}}{{#if_eq icons "fontawesome"}}fab fa-twitter{{/if_eq}}{{#if_eq icons "ionicons"}}ion-logo-twitter{{/if_eq}}{{#if_eq icons "mdi"}}mdi-twitter{{/if_eq}}{{#if_eq icons "eva-icons"}}eva-twitter-outline{{/if_eq}}"></q-icon>
+                <q-icon name="{{#if_eq icons "material-icons"}}rss_feed{{/if_eq}}{{#if_eq icons "material-icons-outlined"}}o_rss_feed{{/if_eq}}{{#if_eq icons "material-icons-round"}}r_rss_feed{{/if_eq}}{{#if_eq icons "material-icons-sharp"}}s_rss_feed{{/if_eq}}{{#if_eq icons "fontawesome"}}fab fa-twitter{{/if_eq}}{{#if_eq icons "ionicons"}}ion-logo-twitter{{/if_eq}}{{#if_eq icons "mdi"}}mdi-twitter{{/if_eq}}{{#if_eq icons "eva-icons"}}eva-twitter-outline{{/if_eq}}"></q-icon>
               </q-item-section>
               <q-item-section>
                 <q-item-label>Twitter</q-item-label>
@@ -129,11 +132,11 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@latest/dist/vue{{#minified}}.min{{/minified}}.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quasar@{{ quasar_version }}/dist/quasar.umd{{#minified}}.min{{/minified}}.js"></script>{{#unless_eq lang "en-us"}}
     <script src="https://cdn.jsdelivr.net/npm/quasar@{{ quasar_version }}/dist/lang/{{lang}}.umd.min.js"></script>{{/unless_eq}}{{#unless_eq icons "material-icons"}}
-    <script src="https://cdn.jsdelivr.net/npm/quasar@{{ quasar_version }}/dist/icon-set/{{#if_eq icons "fontawesome"}}fontawesome-v5{{/if_eq}}{{#if_eq icons "ionicons"}}ionicons-v4{{/if_eq}}{{#if_eq icons "mdi"}}mdi-v3{{/if_eq}}{{#if_eq icons "eva-icons"}}eva-icons{{/if_eq}}.umd.min.js"></script>{{/unless_eq}}
+    <script src="https://cdn.jsdelivr.net/npm/quasar@{{ quasar_version }}/dist/icon-set/{{#if_eq icons "material-icons-outlined"}}material-icons-outlined{{/if_eq}}{{#if_eq icons "material-icons-round"}}material-icons-round{{/if_eq}}{{#if_eq icons "material-icons-sharp"}}material-icons-sharp{{/if_eq}}{{#if_eq icons "fontawesome"}}fontawesome-v5{{/if_eq}}{{#if_eq icons "ionicons"}}ionicons-v4{{/if_eq}}{{#if_eq icons "mdi"}}mdi-v3{{/if_eq}}{{#if_eq icons "eva-icons"}}eva-icons{{/if_eq}}.umd.min.js"></script>{{/unless_eq}}
 
     <script>
       {{#unless_eq lang "en-us"}}Quasar.lang.set(Quasar.lang.{{camel_case lang}})
-      {{/unless_eq}}{{#unless_eq icons "material-icons"}}Quasar.iconSet.set(Quasar.iconSet.{{#if_eq icons "fontawesome"}}fontawesomeV5{{/if_eq}}{{#if_eq icons "ionicons"}}ioniconsV4{{/if_eq}}{{#if_eq icons "mdi"}}mdiV3{{/if_eq}}{{#if_eq icons "eva-icons"}}evaIcons{{/if_eq}})
+      {{/unless_eq}}{{#unless_eq icons "material-icons"}}Quasar.iconSet.set(Quasar.iconSet.{{#if_eq icons "material-icons-outlined"}}materialIconsOutlined{{/if_eq}}{{#if_eq icons "material-icons-round"}}materialIconsRound{{/if_eq}}{{#if_eq icons "material-icons-sharp"}}materialIconsSharp{{/if_eq}}{{#if_eq icons "fontawesome"}}fontawesomeV5{{/if_eq}}{{#if_eq icons "ionicons"}}ioniconsV4{{/if_eq}}{{#if_eq icons "mdi"}}mdiV3{{/if_eq}}{{#if_eq icons "eva-icons"}}evaIcons{{/if_eq}})
       {{/unless_eq}}
 
       Vue.component('my-page', {
